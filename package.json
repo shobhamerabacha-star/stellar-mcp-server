@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail --names stellar,next -c gray,green --pad-prefix \"stellar scaffold watch --build-clients\" \"next dev\"",
-    "dev:web": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node init && concurrently --kill-others-on-fail --names stellar,next -c gray,green --pad-prefix \"stellar scaffold watch --build-clients\" \"next dev\"",
+    "dev:web": "node init && next dev",
+    "build": "node init && next build",
+    "start": "node init && next start",
     "install:contracts": "npm install --workspaces && npm run build --workspaces",
     "lint": "next lint",
     "format": "prettier . --write",
@@ -44,7 +44,7 @@
     "glob": "^13.0.0",
     "globals": "^17.0.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^17.0.4",
     "prettier": "^3.8.0",
     "typescript": "~5.9.3"
   },
