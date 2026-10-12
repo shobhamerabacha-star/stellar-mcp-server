@@ -13,12 +13,12 @@
     "stellar-mcp": "dist/index.js"
   },
   "scripts": {
-    "start:dev": "tsx src/index.ts",
-    "start:prod": "npm run clean && npm run build && node dist/index.js",
+    "start:dev": "node init && tsx src/index.ts",
+    "start:prod": "node init && npm run clean && npm run build && node dist/index.js",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix --max-warnings=0",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "clean": "rm -rf dist",
-    "build": "tsc",
+    "build": "node init && tsc",
     "test": "jest src",
     "prepare": "husky install"
   },
